@@ -14,7 +14,14 @@ namespace Birds
 
             for (int i = 0; i < numberOfEggs; i++)
             {
-                eggs[i] = new Egg((Randomizer.Next(1, 3) + Randomizer.NextDouble()), "white");
+                if (Bird.Randomizer.Next(4)==0)
+                {
+                    eggs[i] = new BrokenEgg(0,"white");
+                }
+                else
+                {
+                    eggs[i] = new Egg((Randomizer.Next(1, 3) + Randomizer.NextDouble()), "white");
+                }
             }
             return eggs;
         }
